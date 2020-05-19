@@ -1,0 +1,41 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.header {
+    background-color: $color-primary;   
+    
+    h2 {
+        margin-left: .5em;
+        font-weight: 200;
+        color: $color-text-white;
+        b {
+            color: $color-text-white;
+            font-weight: 800;
+        }
+    }
+    a {
+        margin-right: .5em;
+        padding-left: .5em;
+        color: $color-text-white;
+        font-size: .9em;
+    }
+    &-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-right {
+        display: flex;
+        align-items: center;
+    }
+    &-line {
+        border-left: 2px solid rgb(97, 97, 97); 
+        height: 50px; 
+        margin-left: 1em;
+        margin-right: 1em;
+      
+    }
+}

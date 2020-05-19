@@ -1,3 +1,27 @@
 // ======================================
 //  Nav Partial
 // ======================================
+
+.nav {
+    background-color: $color-secondary;  
+    
+}
+
+.nav {
+  
+    a {
+    padding: 1em;
+    }
+    .icon{
+        width: 32px;
+        height: 32px;
+        &-svg {
+            color: $color-icon-unvisited;
+        }
+    }
+    &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

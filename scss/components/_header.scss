@@ -2,3 +2,51 @@
 //  Header Partial
 // ======================================
 
+.header {
+    background-color: $color-primary;   
+    
+    h2 {
+        margin-left: 1em;
+        font-weight: 200;
+        color: $color-text-white;
+        b {
+            color: $color-text-white;
+            font-weight: 800;
+        }
+    }
+    a {
+        margin-right: .5em;
+        padding-left: .5em;
+        color: $color-text-white;
+        font-size: .9em;
+  
+    }
+    .user {
+        margin-right: 1em;
+    }
+    &-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-right {
+        display: flex;
+        align-items: center;
+    }
+    &-line {
+        border-left: 2px solid rgba(97, 97, 97, 0.295); 
+        height: 50px; 
+        margin-left: .8em;
+        margin-right: .8em;
+      
+    }
+}
+
+.bell {
+    width: 25px;
+    height: 25px;
+    &-icon {
+        color: #fff;
+    }
+}

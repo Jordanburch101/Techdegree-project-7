@@ -43,11 +43,23 @@
         </svg></a>
       </nav>
 
+      <!-- Search -->
+      <div class="form form-container">
+        <h2 class="title">Dashboard</h2>
+        <form action="index.html" method="post">
+          <input class="form-search" type="text" id="search" placeholder="Search">
+        </form>
+      </div>
 
+      <!-- Traffic chart -->
+      <canvas id="trafficChart" width="400" height="250"></canvas>
+
+      <!-- Daily Traffic -->
+      <canvas id="dailyChart" width="400" height="250"></canvas>
+      
     </div>  
-     <!-- Grid container end -->
-      <script src="/path/to/svg4everybody.js"></script>
-      <script>svg4everybody(); // run it now or whenever you are ready</script>
+    <!-- Grid container end -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
       <script src="app.js"></script>
     </body>
 </html>

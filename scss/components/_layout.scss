@@ -1,4 +1,12 @@
+// ======================================
+//  Layout Partial
+// ======================================
+
 .grid-container {
     display: grid;
-    grid-template-rows: 80px 80px;
+    grid-template-rows: 80px 80px 1fr 2fr 2fr;
 }
+
+// .traffic-chart {
+//     max-width: 500px;
+// }

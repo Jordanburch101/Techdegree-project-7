@@ -8,6 +8,8 @@ $font-secondary: 'Ubuntu', sans-serif;
 
 // Font Colors
 $color-text-primary: rgb(83, 83, 83);
+$color-text-light: lighten( $color-text-primary, 10% );
+$color-text-link: #9698cd;
 $color-text-white: #fff;
 //Colors
 $color-primary: #7477bf;

@@ -344,6 +344,7 @@ template {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   color: #535353;
+  font-size: 1em;
 }
 
 p {
@@ -366,7 +367,7 @@ ul {
 
 .grid-container {
   display: grid;
-  grid-template-rows: 80px 80px 1fr 2fr 2fr 2fr 3fr;
+  grid-template-rows: 80px 80px 100px 1fr 1fr 1fr 500px 300px 300px 300px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -455,13 +456,13 @@ img {
   align-items: center;
 }
 .form-search {
-  height: 30px;
-  width: 200px;
+  height: 50px;
+  width: 250px;
   border: 1px solid rgba(190, 190, 190, 0.685);
-  padding-left: 1em;
-  border-radius: 20px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 10px;
   font-size: 1em;
-  box-shadow: inset 0px 0px 20px -7px rgba(117, 117, 117, 0.69);
 }
 .form-search:focus {
   background-color: #424242;
@@ -472,8 +473,11 @@ img {
 .traffic,
 .daily,
 .pie {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 canvas {
@@ -500,6 +504,7 @@ canvas {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
 }
 
 .twitter,
@@ -511,7 +516,59 @@ canvas {
   align-items: center;
   border: solid 1px rgba(167, 167, 167, 0.432);
   border-radius: 10px;
-  padding: 1em 2em;
+  padding: 1em 2.3em;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.8em;
+  padding: 5px;
+}
+.member-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.member-container h3 {
+  font-size: 1em;
+}
+.member-date p {
+  font-size: 0.6em;
+  color: #6d6d6d;
+}
+.member-img {
+  padding-right: 0.5em;
+}
+.member-imgAndInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.member-imgAndInfo .memeber-info p {
+  font-size: 0.7em;
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  color: #6d6d6d;
+}
+.member-imgAndInfo .memeber-info a {
+  font-size: 0.7em;
+  color: #9698cd;
+}
+.member-imgAndInfo .recent-activity p {
+  font-size: 0.7em;
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  color: #535353;
+}
+.member-imgAndInfo .recent-activity span {
+  font-size: 0.6em;
+  color: #6d6d6d;
 }
 
 /*# sourceMappingURL=style.css.map */

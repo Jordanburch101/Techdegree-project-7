@@ -1,4 +1,4 @@
-
+// Social Icons
 .social {
     h3 {
         color: #7377bf;
@@ -19,6 +19,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        border-bottom: solid 1px rgba(167, 167, 167, 0.315);
     }
 }
 
@@ -31,5 +32,66 @@
     align-items: center;
     border: solid 1px rgba(167, 167, 167, 0.432);
     border-radius: 10px;
-    padding: 1em 2em;
+    padding: 1em 2.3em;
+}
+
+
+
+// New Members
+.member {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: .8em;
+    padding: 5px;
+    &-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        h3 {
+            font-size: 1em;
+        }  
+    }
+    &-date {
+        p {
+            font-size: .6em;
+            color: $color-text-light;
+        }
+    }
+    &-img {
+        padding-right: .5em;
+    }
+    &-imgAndInfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .memeber-info {
+            p {
+                font-size: .7em;
+                margin-top: 0;
+                margin-bottom: 0.1em;
+                color: $color-text-light;
+            }
+            a {
+                font-size: .7em;
+                color: $color-text-link;
+            }
+        }
+        .recent-activity {
+            p {
+                font-size: .7em;
+                margin-top: 0;
+                margin-bottom: 0.1em;
+                color: $color-text-primary;
+            }
+            span {
+                font-size: .6em;
+                color: $color-text-light;
+            }
+        }
+    }
 }

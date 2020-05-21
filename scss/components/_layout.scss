@@ -4,9 +4,13 @@
 
 .grid-container {
     display: grid;
-    grid-template-rows: 80px 80px 1fr 2fr 2fr;
+    grid-template-rows: 80px 80px 1fr 2fr 2fr 2fr 3fr;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 // .traffic-chart {
 //     max-width: 500px;
 // }
+

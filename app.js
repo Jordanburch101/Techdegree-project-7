@@ -1,3 +1,5 @@
+
+
 // Traffic Chart
 const ctx1 = document.getElementById('trafficChart');
 
@@ -19,15 +21,24 @@ const trafficChart = new Chart(ctx1, {
             '25-31'
         ],
         datasets: [{
-            label: 'Weekly Traffic',
+            label: 'Traffic',
             data: weeklyTrafficData,
-            backgroundColor: 'rgba(36, 39, 198, 0.25)',
-            borderColor: 'rgba(115, 0, 168, 0.30)',
+            backgroundColor: '#e2e3f690',
+            borderColor: '#7377bf',
             lineTension: 0.2,
             pointBackgroundColor: '#fff',
             pointRadius: 6,
         }]
     },
+    options: {
+        legend: {
+            display: false,
+            labels: {
+                boxWidth: 0,
+                // defaultFontFamily: 'Roboto', sans-serif;
+            }
+        }
+    }
 });
 
 
@@ -52,14 +63,56 @@ const dailyChart = new Chart(ctx2, {
         datasets: [{
             label: 'Daily Traffic',
             data: dailyData,
-            backgroundColor: 'rgb(109, 82, 173)',
+            backgroundColor: '#7377bf',
             borderColor: 'rgba(115, 0, 168, 0.30)',
             lineTension: 0.2,
             pointBackgroundColor: '#fff',
             borderRadious: 20,
         }]
     },
+    options: {
+        legend: {
+            display: false, 
+        }
+    }
 });
 
+// Pie Chart
 
+const ctx3 = document.getElementById('pieChart');
 
+const pieData = [500, 600, 1200];
+const pieChart = new Chart(ctx3, {
+    type: 'doughnut',
+    data: {
+        labels: [
+            'Phones',
+            'Tablets',
+            'Desktop' 
+        ],
+        datasets: [{
+            label: 'Mobile Users',
+            data: pieData,
+            backgroundColor: [
+                '#74b1bf',
+                '#81c98f',
+                '#7377bf'
+            ],
+            borderColor: [
+                '#74b1bf',
+                '#81c98f',
+                '#7377bf'
+            ],
+            lineTension: 0.2,
+            pointBackgroundColor: '#fff',
+            borderRadious: 20,
+        }]
+    },
+    options: {
+        legend: {
+            position: 'right', 
+            display: true,
+        }
+
+    }
+});

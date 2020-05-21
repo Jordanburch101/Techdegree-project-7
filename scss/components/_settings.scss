@@ -1,0 +1,72 @@
+// ======================================
+//  Settings Partial
+// ======================================
+
+.settings {
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 300px;
+        margin: 0 auto;
+        h3 {
+            align-self: flex-start;
+    
+        }
+    }
+    &-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+        font-size: .8em;
+        label {
+            margin-left: 1em;
+        }
+        p {
+            font-size: 1em;
+        
+        }
+    }
+    &-timezone {
+        height: 30px;
+        width:  300px;
+        margin-top: 1em;
+        border: 1px solid rgba(190, 190, 190, 0.685);
+        padding-left: .5em;
+        padding-right: .5em;
+        border-radius: 10px;
+        font-size: .8em;
+        color: $color-text-light;
+        margin-bottom: 1em;
+        // box-shadow: inset 0px 0px 20px -7px rgba(117,117,117,0.69);
+        
+        &:focus {
+            outline: none;
+        }
+    }
+    &-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+        button {
+            width: 120px;
+            height: 30px;
+            border: 1px solid rgba(190, 190, 190, 0.685);
+            border-radius: 8px;
+            margin-top: 1em;
+            color: $color-text-white;
+        }
+        .button-save {
+            background-color: $color-primary;
+        }
+        .button-cancel {
+            background-color: $color-text-focus;
+        }
+    }
+    
+}

@@ -20,6 +20,9 @@
         justify-content: space-around;
         align-items: center;
         border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+        @include media('med') {
+            flex-direction: row;
+        }
     }
 }
 
@@ -43,17 +46,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 1px rgba(167, 167, 167, 0.315);
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: .8em;
     padding: 5px;
     &-container {
+        border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+        margin-bottom: 1em;
         padding-left: 10px;
         padding-right: 10px;
-        h3 {
-            font-size: 1em;
-        }  
+        @include media('med') {
+            border-right: solid 1px rgba(167, 167, 167, 0.315);
+            margin-bottom: 0;
+        }
     }
     &-date {
         p {
@@ -95,3 +100,4 @@
         }
     }
 }
+

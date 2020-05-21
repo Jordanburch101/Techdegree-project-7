@@ -12,5 +12,9 @@
     @media (min-width: $break-med) {
       @content;             // Add 'else if' for more breakpoints
     }          
+  } @else if $break == 'lrg' {
+    @media (min-width: $break-lrg) {
+      @content;             
+    }
   }    
 }

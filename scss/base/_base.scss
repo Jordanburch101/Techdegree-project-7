@@ -27,3 +27,16 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: .8em;
+}
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size: .8em;
+}
+  :-ms-input-placeholder { /* IE 10+ */
+    font-size: .8em;
+}
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: .8em;
+}

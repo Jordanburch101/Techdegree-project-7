@@ -1,15 +1,19 @@
 .traffic,
 .daily,
 .pie {
+    padding-top: 1em;
     padding-left: 10px;
     padding-right: 10px;
-    // border-top: solid 1px rgba(167, 167, 167, 0.315);
-    border-bottom: solid 1px rgba(167, 167, 167, 0.315);
-    padding-bottom: 1em;
-    padding-top: 1em;
 }
 
-canvas {
-    width: 100% !important;
-    height: auto !important;
+.traffic {
+    margin-bottom: 2em;
+    @include media('med') {
+        
+    }
 }
+
+// canvas {
+//     width: 100% !important;
+//     height: auto !important;
+// }

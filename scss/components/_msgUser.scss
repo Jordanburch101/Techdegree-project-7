@@ -1,0 +1,72 @@
+// ======================================
+//  Message User Partial
+// ======================================
+
+.messageUser {
+    .title {
+        font-family: $font-secondary;
+        font-weight: 400;
+
+    }
+    &-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2em;
+        border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+        form {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        @include media('med') {
+            border-right: solid 1px rgba(167, 167, 167, 0.315);
+        }
+    }
+    &-search {
+        height: 30px;
+        width:  300px;
+        border: 1px solid rgba(190, 190, 190, 0.685);
+        padding-left: .5em;
+        padding-right: .5em;
+        border-radius: 10px;
+        font-size: .8em;
+        margin-bottom: 1em;
+        // box-shadow: inset 0px 0px 20px -7px rgba(117,117,117,0.69);
+        
+        &:focus {
+            background-color: $color-text-focus;
+            color: $color-text-white;
+            outline: none;
+        }
+    }
+    &-text {
+        height: 100px;
+        width:  300px;
+        border: 1px solid rgba(190, 190, 190, 0.685);
+        padding-left: .5em;
+        padding-right: .5em;
+        padding-top: .7em;
+        border-radius: 10px;
+        font-size: .8em;
+        resize: none;
+        &:focus {
+            background-color: $color-text-focus;
+            color: $color-text-white;
+            outline: none;
+        }
+    }
+    &-button {
+        align-self: center;
+        font-size: .8em;
+        margin-top: 1em;
+        width: 300px;
+        height: 30px;
+        border: 1px solid rgba(190, 190, 190, 0.685);
+        border-radius: 10px;
+        color: $color-text-white;
+        background-color: $color-primary;
+    }
+}

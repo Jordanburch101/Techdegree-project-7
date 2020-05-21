@@ -10,6 +10,7 @@ $font-secondary: 'Ubuntu', sans-serif;
 $color-text-primary: rgb(83, 83, 83);
 $color-text-light: lighten( $color-text-primary, 10% );
 $color-text-link: #9698cd;
+$color-text-focus: rgb(116, 116, 116);
 $color-text-white: #fff;
 //Colors
 $color-primary: #7477bf;
@@ -21,5 +22,6 @@ $color-icon-selected: #fff;
 
 // Breakpoints
 $break-med: 768px;
+$break-lrg: 1024px
 
 // Max-width

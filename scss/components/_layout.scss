@@ -3,14 +3,83 @@
 // ======================================
 
 .grid-container {
+    height: 100vh;
     display: grid;
-    grid-template-rows: 80px 80px 100px 1fr 1fr 1fr 500px 300px 300px 300px;
-    max-width: 800px;
+    grid-template-rows: 80px 80px 80px 350px 350px 300px 500px 300px 300px 250px 250px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "search"
+    "traffic"
+    "daily"
+    "pie"
+    "social"
+    "member"
+    "recent"
+    "messageUser"
+    "settings";
+    @include media('med') {
+        grid-template-rows: 80px 80px 80px 350px 300px 200px 300px 300px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "search search"
+        "traffic traffic"
+        "daily pie"
+        "social social"
+        "member recent"
+        "messageUser settings";
+    }
 }
 
 // .traffic-chart {
 //     max-width: 500px;
 // }
 
+.header-container {
+    grid-area: header;
+}
+
+.nav-container {
+    grid-area: nav;
+}
+
+.form-container {
+    grid-area: search;
+}
+
+.traffic {
+    grid-area: traffic;
+}
+
+.daily {
+    grid-area: daily;
+}
+
+.pie {
+    grid-area: pie;
+}
+
+.social-container {
+    grid-area: social;
+}
+
+.member-container {
+    grid-area: member;
+}
+
+.recent-container {
+    grid-area: recent;
+}
+
+.messageUser-container {
+    grid-area: messageUser;
+}
+
+.settings-container {
+    grid-area: settings;
+}

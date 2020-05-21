@@ -31,6 +31,8 @@ const trafficChart = new Chart(ctx1, {
         }]
     },
     options: {
+        responsive: true, 
+        maintainAspectRatio: false,
         legend: {
             display: false,
             labels: {
@@ -71,6 +73,8 @@ const dailyChart = new Chart(ctx2, {
         }]
     },
     options: {
+        responsive: true, 
+        maintainAspectRatio: false,
         legend: {
             display: false, 
         }
@@ -109,6 +113,8 @@ const pieChart = new Chart(ctx3, {
         }]
     },
     options: {
+        responsive: true, 
+        maintainAspectRatio: false,
         legend: {
             position: 'right', 
             display: true,

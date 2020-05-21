@@ -15,17 +15,17 @@
         align-items: center;
     }
     &-search {
-        height: 50px;
+        height: 40px;
         width:  250px;
         border: 1px solid rgba(190, 190, 190, 0.685);
         padding-left: .5em;
         padding-right: .5em;
         border-radius: 10px;
-        font-size: 1em;
+        font-size: .8em;
         // box-shadow: inset 0px 0px 20px -7px rgba(117,117,117,0.69);
         
         &:focus {
-            background-color: rgb(66, 66, 66);
+            background-color: $color-text-focus;
             color: $color-text-white;
             outline: none;
         }

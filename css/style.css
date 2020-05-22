@@ -365,40 +365,29 @@ ul {
   padding: 0;
 }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  font-size: 0.8em;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  font-size: 0.8em;
-}
-
-:-ms-input-placeholder {
-  /* IE 10+ */
-  font-size: 0.8em;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  font-size: 0.8em;
-}
-
 .grid-container {
-  height: 100vh;
   display: grid;
-  grid-template-rows: 80px 80px 80px 350px 350px 300px 500px 300px 300px 250px 250px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
   grid-template-areas: "header" "nav" "search" "traffic" "daily" "pie" "social" "member" "recent" "messageUser" "settings";
+}
+.grid-container section {
+  border-bottom: 1px solid rgba(190, 190, 190, 0.685);
+  border-right: 1px solid rgba(190, 190, 190, 0.685);
+  padding-bottom: 1em;
 }
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-rows: 80px 80px 80px 350px 300px 200px 300px 300px;
+    grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "header header" "nav nav" "search search" "traffic traffic" "daily pie" "social social" "member recent" "messageUser settings";
+  }
+}
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-rows: auto;
+    grid-template-columns: 70px 1fr 1fr;
+    grid-template-areas: "header header header" "nav search search " "nav traffic traffic" "nav daily pie" "nav social social" "nav member recent" "nav messageUser settings";
   }
 }
 
@@ -517,16 +506,22 @@ img {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 1024px) {
+  .nav-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
 
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
 .form .title {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
-}
-.form-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 .form-search {
   height: 40px;
@@ -534,34 +529,74 @@ img {
   border: 1px solid rgba(190, 190, 190, 0.685);
   padding-left: 0.5em;
   padding-right: 0.5em;
-  border-radius: 10px;
-  font-size: 0.8em;
+  border-radius: 5px;
 }
 .form-search:focus {
   background-color: #747474;
   color: #fff;
   outline: none;
 }
+@media (min-width: 768px) {
+  .form-container {
+    flex-direction: row;
+  }
+  .form .title {
+    margin: 0.3em 1em 0.3em 1em;
+    font-size: 1.5em;
+  }
+  .form form {
+    border: 1px solid rgba(190, 190, 190, 0.685);
+    height: 100%;
+    flex-basis: 80%;
+    padding: 0.5em 1em 0.5em 1em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .form-search {
+    width: 350px;
+  }
+}
 
 .traffic,
 .daily,
 .pie {
-  padding-left: 10px;
-  padding-right: 10px;
-  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
-  padding-bottom: 1em;
-  padding-top: 1em;
+  border-bottom: 1px solid rgba(190, 190, 190, 0.685);
+  width: 100%;
 }
-
+.traffic .chart-full,
+.traffic .chart-half,
+.daily .chart-full,
+.daily .chart-half,
+.pie .chart-full,
+.pie .chart-half {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95vw;
+}
 @media (min-width: 768px) {
-  .traffic canvas {
-    height: 50%;
+  .traffic .chart-full,
+.daily .chart-full,
+.pie .chart-full {
+    width: 80vw;
+  }
+  .traffic .chart-half,
+.daily .chart-half,
+.pie .chart-half {
+    width: 45vw;
+  }
+}
+@media (min-width: 1024px) {
+  .traffic .chart-full,
+.daily .chart-full,
+.pie .chart-full {
+    height: 60vw;
   }
 }
 
-canvas {
-  width: 100% !important;
-  height: auto !important;
+.traffic {
+  padding-left: 1em;
 }
 
 .social h3 {
@@ -600,7 +635,15 @@ canvas {
   align-items: center;
   border: solid 1px rgba(167, 167, 167, 0.432);
   border-radius: 10px;
-  padding: 1em 2.3em;
+  margin-top: 1em;
+  padding: 1em 1em;
+}
+@media (min-width: 1024px) {
+  .twitter,
+.facebook,
+.insta {
+    padding: 1em 2.5em;
+  }
 }
 
 .member {
@@ -614,16 +657,8 @@ canvas {
   padding: 5px;
 }
 .member-container {
-  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
-  margin-bottom: 1em;
   padding-left: 10px;
   padding-right: 10px;
-}
-@media (min-width: 768px) {
-  .member-container {
-    border-right: solid 1px rgba(167, 167, 167, 0.315);
-    margin-bottom: 0;
-  }
 }
 .member-date p {
   font-size: 0.6em;
@@ -668,19 +703,11 @@ canvas {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 2em;
-  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
 }
 .messageUser-container form {
-  width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-@media (min-width: 768px) {
-  .messageUser-container {
-    border-right: solid 1px rgba(167, 167, 167, 0.315);
-  }
 }
 .messageUser-search {
   height: 30px;
@@ -700,6 +727,7 @@ canvas {
 .messageUser-text {
   height: 100px;
   width: 300px;
+  margin-bottom: 1em;
   border: 1px solid rgba(190, 190, 190, 0.685);
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -715,10 +743,10 @@ canvas {
 }
 .messageUser-button {
   align-self: center;
-  font-size: 0.8em;
+  font-size: 1em;
   margin-top: 1em;
   width: 300px;
-  height: 30px;
+  height: 40px;
   border: 1px solid rgba(190, 190, 190, 0.685);
   border-radius: 10px;
   color: #fff;
@@ -726,14 +754,13 @@ canvas {
 }
 
 .settings-container {
+  width: 300px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  width: 300px;
-  margin: 0 auto;
 }
-.settings-container h3 {
+.settings-container .title {
   align-self: flex-start;
 }
 .settings-option {
@@ -741,18 +768,16 @@ canvas {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 100%;
   font-size: 0.8em;
-}
-.settings-option label {
-  margin-left: 1em;
 }
 .settings-option p {
   font-size: 1em;
 }
 .settings-timezone {
-  height: 30px;
+  height: 40px;
   width: 300px;
+  align-self: center;
   margin-top: 1em;
   border: 1px solid rgba(190, 190, 190, 0.685);
   padding-left: 0.5em;
@@ -770,11 +795,10 @@ canvas {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
 }
 .settings-button button {
-  width: 120px;
-  height: 30px;
+  width: 140px;
+  height: 40px;
   border: 1px solid rgba(190, 190, 190, 0.685);
   border-radius: 8px;
   margin-top: 1em;

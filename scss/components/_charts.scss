@@ -1,19 +1,30 @@
 .traffic,
 .daily,
 .pie {
-    padding-top: 1em;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.traffic {
-    margin-bottom: 2em;
+    border-bottom: 1px solid $color-border;
+    width: 100%;
+    .chart-full,
+    .chart-half {
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95vw;
+    }
     @include media('med') {
-        
+        .chart-full {
+            width: 80vw;
+        }
+        .chart-half {
+            width: 45vw;
+        }
+    }
+    @include media('sup') {
+        .chart-full {
+            height: 60vw;
+        }
     }
 }
 
-// canvas {
-//     width: 100% !important;
-//     height: auto !important;
-// }
+.traffic {
+    padding-left: 1em;
+}

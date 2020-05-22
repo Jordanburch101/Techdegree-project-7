@@ -23,5 +23,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include media('lrg') {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
     }
 }

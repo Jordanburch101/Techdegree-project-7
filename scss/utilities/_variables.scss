@@ -16,12 +16,12 @@ $color-text-white: #fff;
 $color-primary: #7477bf;
 $color-secondary: #4d4c72;
 $color-trim: rgb(255, 204, 64);
+$color-border: rgba(190, 190, 190, 0.685);
 
 $color-icon-unvisited: rgba(255, 255, 255, 0.5);
 $color-icon-selected: #fff;
 
 // Breakpoints
 $break-med: 768px;
-$break-lrg: 1024px
-
-// Max-width
+$break-lrg: 1024px;
+$break-sup: 1400px;

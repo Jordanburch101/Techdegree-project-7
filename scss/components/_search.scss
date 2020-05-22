@@ -3,31 +3,49 @@
 // ======================================
 
 .form {
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
     .title {
         font-family: $font-secondary;
         font-weight: 400;
-
-    }
-    &-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
     }
     &-search {
         height: 40px;
         width:  250px;
-        border: 1px solid rgba(190, 190, 190, 0.685);
+        border: 1px solid $color-border;
         padding-left: .5em;
         padding-right: .5em;
-        border-radius: 10px;
-        font-size: .8em;
-        // box-shadow: inset 0px 0px 20px -7px rgba(117,117,117,0.69);
-        
+        border-radius: 5px;
+       
         &:focus {
             background-color: $color-text-focus;
             color: $color-text-white;
             outline: none;
+        }
+    }
+    @include media('med') {
+        &-container {
+            flex-direction: row;
+        }
+        .title {
+            margin: .3em 1em .3em 1em;
+            font-size: 1.5em;
+        }
+        form {
+            border: 1px solid $color-border;
+            height: 100%;
+            flex-basis: 80%;
+            padding: .5em 1em .5em 1em;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        &-search {
+            width:  350px;
         }
     }
 }

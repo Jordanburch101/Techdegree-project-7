@@ -25,6 +25,17 @@
         p {
             font-size: 1em;
         }
+        .switch-ios.switch-light input:checked ~ span a {
+            border-color: $color-primary;
+        }
+        .switch-ios.switch-light input:checked ~ span {
+            border-color: $color-primary;
+            box-shadow: inset 0 0 0 30px $color-primary;
+            &:focus {
+            outline: none;
+            }
+        }
+        
     }
     &-timezone {
         height: 40px;
@@ -65,3 +76,5 @@
         }
     } 
 }
+
+

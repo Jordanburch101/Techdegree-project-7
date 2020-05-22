@@ -3,9 +3,13 @@
 .pie {
     border-bottom: 1px solid $color-border;
     width: 100%;
+    h3 {
+        margin-left: 2em;
+        font-weight: 500;
+        font-size: 1.2em;
+    }
     .chart-full,
     .chart-half {
-        margin-top: 1em;
         margin-left: auto;
         margin-right: auto;
         width: 95vw;
@@ -18,13 +22,38 @@
             width: 45vw;
         }
     }
-    @include media('sup') {
-        .chart-full {
-            height: 60vw;
-        }
-    }
+    // @include media('sup') {
+    //     .chart-full {
+    //         height: 60vw;
+    //     }
+    // }
 }
 
 .traffic {
     padding-left: 1em;
+    &-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .toggle {
+        width: 400px;
+        height: 30px;
+        font-size: .8em;
+        margin-right: 2em;
+        
+    }
+    .switch-ios.switch-toggle a {
+        background-color: #81c98f;
+        border: 0.125em solid rgba(216, 217, 219, 0);
+    }
+    .switch-ios.switch-toggle {
+        background-color: rgba(255, 0, 0, 0);
+        box-shadow: none;
+    }
+    .switch-ios input:checked + label {
+        color: #fff;
+        font-size: 1em;
+    }
 }

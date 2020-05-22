@@ -26,6 +26,7 @@
         @include media('lrg') {
             flex-direction: column;
             justify-content: flex-start;
+            padding-top: 1em;
         }
     }
 }

@@ -510,6 +510,7 @@ img {
   .nav-container {
     flex-direction: column;
     justify-content: flex-start;
+    padding-top: 1em;
   }
 }
 
@@ -564,13 +565,19 @@ img {
   border-bottom: 1px solid rgba(190, 190, 190, 0.685);
   width: 100%;
 }
+.traffic h3,
+.daily h3,
+.pie h3 {
+  margin-left: 2em;
+  font-weight: 500;
+  font-size: 1.2em;
+}
 .traffic .chart-full,
 .traffic .chart-half,
 .daily .chart-full,
 .daily .chart-half,
 .pie .chart-full,
 .pie .chart-half {
-  margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
   width: 95vw;
@@ -587,20 +594,43 @@ img {
     width: 45vw;
   }
 }
-@media (min-width: 1024px) {
-  .traffic .chart-full,
-.daily .chart-full,
-.pie .chart-full {
-    height: 60vw;
-  }
-}
 
 .traffic {
   padding-left: 1em;
 }
+.traffic-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.traffic .toggle {
+  width: 400px;
+  height: 30px;
+  font-size: 0.8em;
+  margin-right: 2em;
+}
+.traffic .switch-ios.switch-toggle a {
+  background-color: #81c98f;
+  border: 0.125em solid rgba(216, 217, 219, 0);
+}
+.traffic .switch-ios.switch-toggle {
+  background-color: rgba(255, 0, 0, 0);
+  box-shadow: none;
+}
+.traffic .switch-ios input:checked + label {
+  color: #fff;
+  font-size: 1em;
+}
 
+.social .title {
+  color: #535353;
+  font-weight: 500;
+  align-self: flex-start;
+  margin-left: 2em;
+}
 .social h3 {
-  color: #7377bf;
+  color: #7477bf;
   font-size: 1.2em;
   margin-bottom: 0;
 }
@@ -618,11 +648,18 @@ img {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-bottom: solid 1px rgba(167, 167, 167, 0.315);
+  padding-top: 1em;
+}
+.social-widgets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 2em;
 }
 @media (min-width: 768px) {
-  .social-container {
+  .social-widgets {
     flex-direction: row;
+    width: 100%;
   }
 }
 
@@ -636,7 +673,7 @@ img {
   border: solid 1px rgba(167, 167, 167, 0.432);
   border-radius: 10px;
   margin-top: 1em;
-  padding: 1em 1em;
+  padding: 1em 1.5em;
 }
 @media (min-width: 1024px) {
   .twitter,
@@ -773,6 +810,16 @@ img {
 }
 .settings-option p {
   font-size: 1em;
+}
+.settings-option .switch-ios.switch-light input:checked ~ span a {
+  border-color: #7477bf;
+}
+.settings-option .switch-ios.switch-light input:checked ~ span {
+  border-color: #7477bf;
+  box-shadow: inset 0 0 0 30px #7477bf;
+}
+.settings-option .switch-ios.switch-light input:checked ~ span:focus {
+  outline: none;
 }
 .settings-timezone {
   height: 40px;

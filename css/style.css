@@ -565,9 +565,9 @@ img {
   border-bottom: 1px solid rgba(190, 190, 190, 0.685);
   width: 100%;
 }
-.traffic h3,
-.daily h3,
-.pie h3 {
+.traffic .title,
+.daily .title,
+.pie .title {
   margin-left: 2em;
   font-weight: 500;
   font-size: 1.2em;
@@ -594,18 +594,28 @@ img {
     width: 45vw;
   }
 }
-
-.traffic {
-  padding-left: 1em;
+@media (min-width: 1024px) {
+  .traffic .chart-full,
+.daily .chart-full,
+.pie .chart-full {
+    width: 60vw;
+  }
 }
+
 .traffic-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1em;
+}
+.traffic-header .header-title {
+  margin-left: 0;
+  font-weight: 500;
+  font-size: 1.2em;
 }
 .traffic .toggle {
-  width: 400px;
+  width: 300px;
   height: 30px;
   font-size: 0.8em;
   margin-right: 2em;
@@ -622,12 +632,28 @@ img {
   color: #fff;
   font-size: 1em;
 }
+@media (min-width: 768px) {
+  .traffic {
+    padding-left: 1em;
+  }
+  .traffic .header-title {
+    margin-left: 2em;
+  }
+  .traffic-header {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+  .traffic .toggle {
+    width: 400px;
+  }
+}
 
 .social .title {
   color: #535353;
   font-weight: 500;
   align-self: flex-start;
   margin-left: 2em;
+  margin-top: 0;
 }
 .social h3 {
   color: #7477bf;

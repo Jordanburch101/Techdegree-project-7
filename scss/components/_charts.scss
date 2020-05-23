@@ -3,7 +3,7 @@
 .pie {
     border-bottom: 1px solid $color-border;
     width: 100%;
-    h3 {
+    .title {
         margin-left: 2em;
         font-weight: 500;
         font-size: 1.2em;
@@ -22,23 +22,29 @@
             width: 45vw;
         }
     }
-    // @include media('sup') {
-    //     .chart-full {
-    //         height: 60vw;
-    //     }
-    // }
+    @include media('sup') {
+        .chart-full {
+            width: 70vw;
+        }
+    }
 }
 
 .traffic {
-    padding-left: 1em;
+    // padding-left: 1em;
     &-header {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 1em;
+        .header-title {
+            margin-left: 0;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
     }
     .toggle {
-        width: 400px;
+        width: 300px;
         height: 30px;
         font-size: .8em;
         margin-right: 2em;
@@ -55,5 +61,18 @@
     .switch-ios input:checked + label {
         color: #fff;
         font-size: 1em;
+    }
+    @include media('med') {
+        padding-left: 1em;
+        .header-title {
+            margin-left: 2em;
+        }
+        &-header {
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+        .toggle {
+            width: 400px;
+        }
     }
 }

@@ -17,7 +17,7 @@
       @content;             
     }
   } @else if $break == 'sup' {
-    @media (min-width: $break-lrg) {
+    @media (min-width: $break-sup) {
       @content;             
     }
   }    

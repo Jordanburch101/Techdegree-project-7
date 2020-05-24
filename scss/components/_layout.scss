@@ -2,9 +2,15 @@
 //  Layout Partial
 // ======================================
 
+body {
+    background-color: rgb(233, 233, 233);
+}
+
 .grid-container {
     display: grid;
-    // margin: 0 auto;
+    max-width: 1000px;
+    background-color: #fff;
+    margin: 0 auto;
     grid-template-columns: 100%;
     grid-template-rows: auto;
     grid-template-areas: 
@@ -50,7 +56,6 @@
         "nav messageUser settings";
     }
 }
-
 
 .header-container {
     grid-area: header;

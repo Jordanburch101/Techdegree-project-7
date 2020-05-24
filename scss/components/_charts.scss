@@ -22,15 +22,17 @@
             width: 45vw;
         }
     }
-    @include media('sup') {
+    @include media('lrg') {
         .chart-full {
-            width: 70vw;
+            max-width: 800px;
+        }
+        .chart-half {
+            max-width: 400px;
         }
     }
 }
 
 .traffic {
-    // padding-left: 1em;
     &-header {
         display: flex;
         flex-direction: column;
@@ -57,6 +59,8 @@
     .switch-ios.switch-toggle {
         background-color: rgba(255, 0, 0, 0);
         box-shadow: none;
+        
+
     }
     .switch-ios input:checked + label {
         color: #fff;

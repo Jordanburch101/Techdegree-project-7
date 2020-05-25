@@ -124,7 +124,7 @@ const aletContainer = document.getElementsByClassName('alertContainer');
 alertBanner.innerHTML = 
     `  
     <div class="alert-banner">
-    <P><strong>Alert:</strong> You have <strong>3</strong> overdue taks to complete</P>
+    <P><strong>Alert:</strong> You have <strong>3</strong> overdue tasks to complete</P>
     <p class="alert-banner-close">X</p>
     </div>
     `
@@ -133,5 +133,53 @@ alertBanner.addEventListener('click', e => {
     const element = e.target;
     if(element.classList.contains("alert-banner-close")) {
         alertBanner.className += " hidden";
+    }
+});
+
+
+///////////////////////////////
+/////////// Bell //////////////
+///////////////////////////////
+
+const bellIcon = document.getElementById("bell");
+const unreadContainer = document.getElementById("unread");
+
+// unreadContainer toggle 
+unreadContainer.style.opacity = 0;
+unreadContainer.style.display = 'none';
+
+// Set display to show
+function displayShow(event) {
+    setTimeout(function(){ event.style.opacity = 1 }, 1);
+}
+// Add event listenr to bell icon
+bellIcon.addEventListener('click', e => {
+    if(unreadContainer.style.opacity === '0') {
+        unreadContainer.style.display = '';
+        displayShow(unreadContainer);
+    } else {
+        unreadContainer.style.opacity = 0; 
+    }
+});
+
+
+///////////////////////////////
+/////// Unread Message ////////
+///////////////////////////////
+
+// Remove HTMl after hiding message
+function removeHtml(event) {
+    setTimeout(function(){ event.innerHTML = '' }, 1000);
+}
+
+// Add event listener to msg contaienr
+unreadContainer.addEventListener('click', (e) => {
+    const buttonPressed = e.target;
+    const unreadMsg = buttonPressed.parentNode;
+    if(unreadMsg.classList.value === "unread-message") {
+        if(buttonPressed.textContent === "X") {
+            unreadMsg.className += "-hidden"; 
+            removeHtml(unreadMsg);
+         }
     }
 });

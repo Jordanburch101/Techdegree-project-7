@@ -601,6 +601,41 @@ img {
   color: #fff;
 }
 
+.header-right {
+  position: relative;
+}
+
+.unread-container {
+  position: absolute;
+  width: 250px;
+  max-height: 10%;
+  z-index: 100;
+  top: 58px;
+  right: 20px;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in;
+}
+.unread-message, .unread-message-hidden {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  background-color: rgba(248, 246, 246, 0.973);
+  border-bottom: 1px solid rgba(190, 190, 190, 0.685);
+  font-size: 0.8em;
+  padding: 0 1em;
+}
+.unread-message-close, .unread-message-hidden-close {
+  font-weight: bold;
+  font-size: 1em;
+}
+.unread-message-hidden, .unread-message-hidden-hidden {
+  opacity: 0;
+  max-height: 0;
+  animation: fadeout 1s;
+  border-bottom: none;
+}
+
 .hidden {
   opacity: 0;
   max-height: 0;

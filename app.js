@@ -1,4 +1,6 @@
-
+///////////////////////////////
+/////////// Charts ////////////
+//////////////////////////////
 
 // Traffic Chart
 let trafficCanvas = document.getElementById('trafficChart');
@@ -75,7 +77,6 @@ let dailyChart = new Chart(dailyCanvas, {
 
 
 // Pie Chart
-
 const pieCanvas = document.getElementById('pieChart');
 let pieData = {
     labels: [
@@ -113,37 +114,24 @@ const pieChart = new Chart(pieCanvas, {
     options: pieOptions
 });
 
-// const pieChart = new Chart(ctx3, {
-//     type: 'doughnut',
-//     data: {
-//         labels: [
-//             'Phones',
-//             'Tablets',
-//             'Desktop' 
-//         ],
-//         datasets: [{
-//             label: 'Mobile Users',
-//             data: [500, 600, 1200],
-//             backgroundColor: [
-//                 '#74b1bf',
-//                 '#81c98f',
-//                 '#7377bf'
-//             ],
-//             borderColor: [
-//                 '#74b1bf',
-//                 '#81c98f',
-//                 '#7377bf'
-//             ],
-//             lineTension: 0.2,
-//             pointBackgroundColor: '#fff',
-//             borderRadious: 20,
-//         }]
-//     },
-//     options: {
-//         legend: {
-//             position: 'right', 
-//             display: true,
-//         }
+///////////////////////////////
+/////////// Alet //////////////
+///////////////////////////////
 
-//     }
-// });
+const alertBanner = document.getElementById("alert");
+const aletContainer = document.getElementsByClassName('alertContainer');
+
+alertBanner.innerHTML = 
+    `  
+    <div class="alert-banner">
+    <P><strong>Alert:</strong> You have <strong>3</strong> overdue taks to complete</P>
+    <p class="alert-banner-close">X</p>
+    </div>
+    `
+
+alertBanner.addEventListener('click', e => {
+    const element = e.target;
+    if(element.classList.contains("alert-banner-close")) {
+        alertBanner.className += " hidden";
+    }
+});

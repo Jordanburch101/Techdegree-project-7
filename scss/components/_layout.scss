@@ -17,6 +17,7 @@ body {
     "header"
     "nav"
     "search"
+    "alert"
     "traffic"
     "daily"
     "pie"
@@ -37,6 +38,7 @@ body {
         "header header"
         "nav nav"
         "search search"
+        "alert alert"
         "traffic traffic"
         "daily pie"
         "social social"
@@ -48,7 +50,8 @@ body {
         grid-template-columns: 70px 1fr 1fr;
         grid-template-areas: 
         "header header header"
-        "nav search search "
+        "nav search search"
+        "nav alert alert"
         "nav traffic traffic"
         "nav daily pie"
         "nav social social"
@@ -67,6 +70,10 @@ body {
 
 .form-container {
     grid-area: search;
+}
+
+.alertContainer {
+    grid-area: alert;
 }
 
 .traffic {

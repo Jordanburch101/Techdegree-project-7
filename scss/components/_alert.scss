@@ -1,0 +1,46 @@
+#alert {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    border-right: 1px solid $color-border; 
+    .alert-banner {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        height: 10%;
+        width: 90%;
+        padding: 0 1em;
+        background-color: $color-primary;
+        border-radius: 10px;
+        max-height: 999px;
+    
+        p {
+            color: #fff;
+            font-size: .9em;
+            strong {
+                color: #fff;
+            }
+        }
+    }
+    
+}
+
+.hidden {  
+    opacity: 0;
+    max-height: 0;
+    animation: fadeout 1s ;
+  }
+
+// Fade out animation
+@keyframes fadeout {
+    from {
+       max-height: 999px;
+
+    opacity: 1;}
+    to {
+	display:none;
+    max-height: 0;
+    opacity:0;}
+} 

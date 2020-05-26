@@ -160,7 +160,7 @@ const aletContainer = document.getElementsByClassName('alertContainer');
 alertBanner.innerHTML = 
     `  
     <div class="alert-banner">
-    <P><strong>Alert:</strong> You have <strong>3</strong> overdue tasks to complete</P>
+    <P><strong>Alert:</strong> You have <strong>4</strong> overdue tasks to complete</P>
     <p class="alert-banner-close">X</p>
     </div>
     `
@@ -218,5 +218,30 @@ unreadContainer.addEventListener('click', (e) => {
             unreadMsg.className += "-hidden"; 
             removeHtml(unreadMsg);
          }
+    }
+});
+
+///////////////////////////////
+/////// Meesage Users /////////
+///////////////////////////////
+
+//Autocomplete
+const users = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+const search = document.getElementById('userSearch');
+const message = document.getElementById('messageField');
+const send = document.getElementById('send');
+new Awesomplete(search, {
+	list: users
+});
+
+send.addEventListener('click', () => {
+    if(search.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending");
+    } else if(search.value === "") {
+        alert("Please fill out user field before sending");
+    } else if(message.value === "") {
+        alert("Please fill out message field before sending");
+    } else {
+        alert(`Message successfully sent to: ${search.value}`);
     }
 });

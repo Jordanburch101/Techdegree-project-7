@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>WebApp Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/toggle/toggle-switch.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toggle/toggle-switch.css">
+    <link rel="stylesheet" href="awesomplete/awesomplete.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
@@ -21,12 +22,12 @@
         <div class="header-right">
           <!-- Unread alerts -->
           <div class="unread-container" id="unread">
-            <div id="test" class="unread-message"><p>🟢 You have 6 unread messages</p><p class="unread-message-close">X</p></div>
-            <div id="test" class="unread-message"><p>🟢 You have 3 new followers</p><p class="unread-message-close">X</p></div>
-            <div id="test" class="unread-message"><p>🟢 You have 4 new messages</p><p class="unread-message-close">X</p></div>
-            <div id="test" class="unread-message"><p>🟢 You have 1 new request</p><p class="unread-message-close">X</p></div>
+            <div class="unread-message"><p>🟢 You have 6 unread messages</p><p class="unread-message-close">X</p></div>
+            <div class="unread-message"><p>🟢 You have 3 new followers</p><p class="unread-message-close">X</p></div>
+            <div class="unread-message"><p>🟢 You have 4 new messages</p><p class="unread-message-close">X</p></div>
+            <div class="unread-message"><p>🟢 You have 1 new request</p><p class="unread-message-close">X</p></div>
           </div>
-          <p id="bell"><svg class="bell" viewBox="0 0 32 32" title="icon-bell">
+          <p id="bell"><svg class="bell" viewBox="0 0 32 32">
             <path class="bell-icon" d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z" fill="currentColor"/>
           </svg></p>
           <div class="header-line"></div>
@@ -39,16 +40,16 @@
 
       <!-- Nav -->
       <nav class="nav nav-container">
-        <a href=""><svg class="icon" viewBox="0 0 32 32" title="icon-dashboard">
+        <a href=""><svg class="icon" viewBox="0 0 32 32">
           <path class="icon-svg" d="M25 18c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zm1 12c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zm-7 4c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zM28 0H6C3.8 0 2 1.8 2 4v24c0 2.2 1.8 4 4 4h22c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zm2 28c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V8h26v20zm0-22H4V4c0-1.1.9-2 2-2h22c1.1 0 2 .9 2 2v2zM17 18c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zM9 26c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2H8v-2zm1-4c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2H8v-2z" fill="currentColor"/>
         </svg></a>
-        <a href=""><svg class="icon" role="img" title="icon-members">
+        <a href=""><svg class="icon" role="img">
           <path class="icon-svg" d="M18 16.4c1.3-1.7 2-3.9 2-6.4 0-5.5-4-10-9-10S2 4.5 2 10c0 2.4.8 4.6 2 6.4-2.3.8-4 3-4 5.6v4c0 3.3 2.7 6 6 6h10c3.3 0 6-2.7 6-6v-4c0-2.6-1.7-4.8-4-5.6zM4 10c0-4.4 3.1-8 7-8s7 3.6 7 8-3.1 8-7 8-7-3.6-7-8zm16 15.5c0 2.5-2.2 4.5-4.9 4.5H6.9C4.2 30 2 28 2 25.5v-3c0-2.1 1.6-3.9 3.8-4.4C7.2 19.3 9 20 11 20s3.8-.7 5.2-1.9c2.2.5 3.8 2.2 3.8 4.4v3zM23 8h8c.6 0 1-.4 1-1s-.4-1-1-1h-8c-.6 0-1 .4-1 1s.4 1 1 1zm8 16h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zm0-12h-8c-.6 0-1 .4-1 1s.4 1 1 1h8c.6 0 1-.4 1-1s-.4-1-1-1zm0 6h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z" fill="currentColor"/>
         </svg></a>
-        <a href=""><svg class="icon" role="img" title="icon-visits">
+        <a href=""><svg class="icon" role="img">
           <path class="icon-svg" d="M14 0h-2c-1.1 0-2 .9-2 2v28c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 29c0 .6-.4 1-1 1s-1-.4-1-1V3c0-.6.4-1 1-1s1 .4 1 1v26zM4 9H2c-1.1 0-2 .9-2 2v19c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V11c0-1.1-.9-2-2-2zm0 20c0 .6-.4 1-1 1s-1-.4-1-1V12c0-.6.4-1 1-1s1 .4 1 1v17zm20-13h-2c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V18c0-1.1-.9-2-2-2zm0 13c0 .6-.4 1-1 1s-1-.4-1-1V19c0-.6.4-1 1-1s1 .4 1 1v10z" fill="currentColor"/>
         </svg></a>
-        <a href=""><svg class="icon" role="img" title="icon-settings">
+        <a href=""><svg class="icon" role="img">
           <path class="icon-svg" d="M26 24H14.9c-.4-1.7-2-3-3.9-3s-3.4 1.3-3.9 3H6c-.6 0-1 .4-1 1s.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-15 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM26 8H14.9c-.4-1.7-2-3-3.9-3S7.6 6.3 7.1 8H6c-.6 0-1 .4-1 1s.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-15 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM26 16h-2.1c-.4-1.7-2-3-3.9-3s-3.4 1.3-3.9 3H6c-.6 0-1 .4-1 1s.4 1 1 1h10.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-6 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM28 0H4C1.8 0 0 1.8 0 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zm2 28c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h24c1.1 0 2 .9 2 2v24z" fill="currentColor"/>
         </svg></a>
       </nav>
@@ -164,7 +165,7 @@
               <img src="images/member-1.jpg" alt="Photo of Victoria">
             </div>
             <div class="memeber-info">
-              <p c>Victoria Chambers</p>
+              <p>Victoria Chambers</p>
               <a href="mailto:victoria.chambers80@example.com">victoria.chambers80@example.com</a>
             </div>
           </div>
@@ -282,11 +283,11 @@
         
       <!-- Message User -->
       <section class="messageUser-container">
-        <form action="index.html" method="post">
+        <form>
           <h3 class="messageUser-title">Message User</h3>
-          <input class="messageUser-search" type="text" id="search-user" placeholder="Search">
-          <textarea class="messageUser-text" id="message-for-user" placeholder="Message for User"></textarea>
-          <button class="messageUser-button" type="reset">Send</button>
+          <input id="userSearch" class="messageUser-search" type="text" placeholder="Search for user">
+          <textarea id="messageField" class="messageUser-text" placeholder="Message for User"></textarea>
+          <button id="send" class="messageUser-button">Send</button>
         </form>
       </section>
 
@@ -415,6 +416,7 @@
     </main>
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="awesomplete/awesomplete.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

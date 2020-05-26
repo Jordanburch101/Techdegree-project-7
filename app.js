@@ -1,26 +1,33 @@
 ///////////////////////////////
 /////////// Charts ////////////
 //////////////////////////////
+const hour = document.getElementById('hour');
+const day = document.getElementById('day');
+const week = document.getElementById('week');
+const month = document.getElementById('month');
+// Traffic Data Sets
+const trafficHourData = [1, 0, 3, 5, 10, 15, 20, 30, 35, 20, 15, 5];
+const trafficHourLabels = ['0-2','3-4','5-6','7-8','9-10','11-12','13-14','15-16','17-18','19-20','21-22','23-24'];
+
+const trafficDayData = [100, 30, 50, 90, 40, 60, 80];
+const trafficDayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+const trafficWeekData = [0, 500, 1200, 900, 1500, 2000, 1400, 2100, 2300, 1900, 1300];
+const trafficWeekLabels = ['16-22','23-29','30-5','6-12','13-19','20-26','27-3','4-10','11-17','18-24','25-31'];
+
+const trafficMonthLabels = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov', 'Dec'];
+const trafficMonthData = [3000, 4500, 2345, 1254, 2430, 5450, 6100, 5600, 5000, 4600, 4000, 2040];
 
 // Traffic Chart
 let trafficCanvas = document.getElementById('trafficChart');
-let trafficData = {
-    labels: [
-        '16-22',
-        '23-29',
-        '30-5',
-        '6-12',
-        '13-19',
-        '20-26',
-        '27-3',
-        '4-10',
-        '11-17',
-        '18-24',
-        '25-31'
-    ],
+let TrafficData = trafficWeekData;
+let TrafficLabel = trafficWeekLabels;
+
+let trafficDataAll = {
+    labels: TrafficLabel,
     datasets: [{
     
-        data: [0, 500, 1200, 900, 1500, 2000, 1400, 2100, 2300, 1900, 1300],
+        data: TrafficData,
         backgroundColor: '#e2e3f690',
         borderColor: '#7377bf',
         lineTension: 0.2,
@@ -34,12 +41,44 @@ let trafficOptions = {
         labels: {
             boxWidth: 0,
         }
-    }
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
 };
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: trafficDataAll,
     options: trafficOptions
+});
+
+///////////////////////////////
+//////// Traffic Data  ////////
+///////////////////////////////
+function updateChart(labels, myData) {
+    trafficChart.data.labels = labels;
+    trafficChart.data.datasets[0].data = myData;
+}
+hour.addEventListener('click', (e) => {
+    updateChart(trafficHourLabels, trafficHourData);
+    trafficChart.update();
+});
+day.addEventListener('click', (e) => {
+    updateChart(trafficDayLabels, trafficDayData);
+    trafficChart.update();
+});
+week.addEventListener('click', (e) => {
+    updateChart(trafficWeekLabels, trafficWeekData);
+    trafficChart.update();
+});
+
+month.addEventListener('click', (e) => {
+    updateChart(trafficMonthLabels, trafficMonthData);
+    trafficChart.update();
 });
 
 // Daily Chart
@@ -74,8 +113,6 @@ let dailyChart = new Chart(dailyCanvas, {
     data: dailyData,
     options: dailyOptions
 });
-
-
 // Pie Chart
 const pieCanvas = document.getElementById('pieChart');
 let pieData = {
@@ -113,7 +150,6 @@ const pieChart = new Chart(pieCanvas, {
     data: pieData,
     options: pieOptions
 });
-
 ///////////////////////////////
 /////////// Alet //////////////
 ///////////////////////////////
@@ -135,8 +171,6 @@ alertBanner.addEventListener('click', e => {
         alertBanner.className += " hidden";
     }
 });
-
-
 ///////////////////////////////
 /////////// Bell //////////////
 ///////////////////////////////
@@ -144,27 +178,30 @@ alertBanner.addEventListener('click', e => {
 const bellIcon = document.getElementById("bell");
 const unreadContainer = document.getElementById("unread");
 
-// unreadContainer toggle 
+// unreadContainer hide 
 unreadContainer.style.opacity = 0;
 unreadContainer.style.display = 'none';
 
 // Set display to show
 function displayShow(event) {
-    setTimeout(function(){ event.style.opacity = 1 }, 1);
+    setTimeout(function(){ event.style.opacity = 1 }, 100);
+}
+// Set display to hide
+function displayHide(event) {
+    setTimeout(function(){ event.style.display = 'none' }, 1000);
 }
 // Add event listenr to bell icon
-bellIcon.addEventListener('click', e => {
+bellIcon.addEventListener('click', (e) => {
     if(unreadContainer.style.opacity === '0') {
         unreadContainer.style.display = '';
         displayShow(unreadContainer);
     } else {
-        unreadContainer.style.opacity = 0; 
+        unreadContainer.style.opacity = 0;
+        displayHide(unreadContainer); 
     }
 });
-
-
 ///////////////////////////////
-/////// Unread Message ////////
+/////// Unread Messages ///////
 ///////////////////////////////
 
 // Remove HTMl after hiding message

@@ -45,9 +45,44 @@
 }
 
 .bell {
-    width: 20px;
-    height: 20px;
-    &-icon {
-        color: #fff;
+    transition: transform .1s ease-in;  
+    &-left {
+        color: rgb(66, 226, 135);
+        &-bottom {
+            color: rgb(50, 182, 107);
+        }
     }
+    &-right {
+        color: rgb(73, 255, 152);
+        &-bottom {
+            color: rgb(66, 226, 135);
+        }
+    }
+    &-middle {
+        color: rgb(50, 182, 107);
+    }
+}
+
+.bellWhite {
+    transition: transform .1s ease-in;  
+    &-left {
+        color: #f3f3f3;
+        &-bottom {
+            color: #c5c5c5;
+        }
+    }
+    &-right {
+        color: #ffffff;
+        &-bottom {
+            color: #f3f3f3;
+        }
+    }
+    &-middle {
+        color: #c5c5c5;
+    }
+}
+
+.bell:hover,
+.bellWhite:hover {
+    transform: scale(1.3);
 }

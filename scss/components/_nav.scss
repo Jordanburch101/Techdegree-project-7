@@ -8,15 +8,18 @@
 }
 
 .nav {
-  
     a {
     padding: 1em;
     }
     .icon{
         width: 32px;
         height: 32px;
+        transition: transform .1s ease-in;
         &-svg {
             color: $color-icon-unvisited;
+        }
+        &:hover {
+            transform: scale(1.2);
         }
     }
     &-container {
@@ -28,5 +31,14 @@
             justify-content: flex-start;
             padding-top: 1em;
         }
+    }
+    .current {
+        display: flex;
+       
+    }
+    .border-left {
+        position: absolute;
+        border-left: 1px solid $color-border;
+        padding-right: 5px;
     }
 }

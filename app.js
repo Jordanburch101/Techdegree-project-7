@@ -195,6 +195,16 @@ bellIcon.addEventListener('click', (e) => {
     if(unreadContainer.style.opacity === '0') {
         unreadContainer.style.display = '';
         displayShow(unreadContainer);
+        bellIcon.innerHTML = 
+        ` 
+        <svg class="bellWhite" height="24" width="24">
+        <path class="bellWhite-right-bottom" d="M15 20a3 3 0 11-6 0 3 3 0 116 0z" fill="currentColor"/>
+        <path class="bellWhite-right" d="M12 0a2 2 0 00-1 2L7 4 6 7l-1 6-4 5 1 1 1 1h18l1-1 1-1-4-5-1-6-1-4-4-1V1l-1-1z" fill="currentColor"/>
+        <path class="bellWhite-left-bottom" d="M12 17c-2 0-3 1-3 3s1 3 3 3v-6z" fill="currentColor"/>
+        <path class="bellWhite-left" fill="currentColor" d="M12 0l-1 2-4 2-1 3-1 6-4 5 1 1 1 1h9V0z"/>
+        <path class="bellWhite-middle" d="M9 20v1h6v-1H9z" fill="currentColor"/>
+      </svg>
+        `
     } else {
         unreadContainer.style.opacity = 0;
         displayHide(unreadContainer); 
@@ -245,3 +255,76 @@ send.addEventListener('click', () => {
         alert(`Message successfully sent to: ${search.value}`);
     }
 });
+
+///////////////////////////////
+/////// Local Storage /////////
+///////////////////////////////
+
+////////////// Timezone local storage //////////////
+const select = document.querySelector(".settings-timezone");
+const selectOption = select.options[select.selectedIndex];
+let savedSelected = localStorage.getItem('select');
+
+if(savedSelected) {
+    select.value = savedSelected;
+}
+// Save timezone to localstorage function
+function timezoneSelect() {
+    savedSelected = select.options[select.selectedIndex].value;
+    localStorage.setItem('select', savedSelected);
+}
+////////////// CheckBox Local Storage //////////////
+const emailCheck = document.getElementById('emailCheck');
+const profileCheck = document.getElementById('profileCheck');
+
+// Save options to localstorage
+function save() {
+    window.localStorage.clear()
+    if(emailCheck.checked === true && profileCheck.checked === true) {
+        localStorage.setItem('emailCheck', emailCheck.checked);
+        localStorage.setItem('profileCheck', profileCheck.checked);
+    } else if(emailCheck.checked === true) {
+        localStorage.setItem('emailCheck', emailCheck.checked);
+    } else if(profileCheck.checked === true) {
+        localStorage.setItem('profileCheck', profileCheck.checked);
+    } else {
+        window.localStorage.clear()
+        emailCheck.checked = false;
+        profileCheck.checked = false;
+    }
+    timezoneSelect()
+    console.log(localStorage);
+}
+// Clear localstorage and reset dom
+function clr(){
+    location.reload();
+    window.localStorage.clear()
+    emailCheck.checked = false;
+    profileCheck.checked = false;
+    select.value = '';
+    console.log(localStorage);
+}
+// Return boolem values from localstorage
+const emailChecked = JSON.parse(localStorage.getItem('emailCheck'));
+const profileChecked = JSON.parse(localStorage.getItem('profileCheck'));
+function checkedBoth() {
+    if(emailChecked === true && profileChecked === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// Check localstorage on load
+function load() {
+    const Allchecked = JSON.parse(localStorage.getItem('profileCheck', 'emailCheck'));
+    if(emailChecked === true && profileChecked === true) {
+        document.getElementById('profileCheck').checked = checkedBoth();
+        document.getElementById('emailCheck').checked = checkedBoth();
+    } else if(emailChecked === true) {
+        document.getElementById('emailCheck').checked = emailChecked;
+    } else if(profileChecked === true) {
+        document.getElementById('profileCheck').checked = profileChecked;
+    }
+    
+}
+load()

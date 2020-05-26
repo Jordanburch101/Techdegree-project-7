@@ -222,7 +222,7 @@ unreadContainer.addEventListener('click', (e) => {
 });
 
 ///////////////////////////////
-/////// Meesage Users /////////
+/////// Message Users /////////
 ///////////////////////////////
 
 //Autocomplete

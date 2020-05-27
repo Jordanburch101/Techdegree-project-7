@@ -499,7 +499,7 @@ img {
 
 .bell {
   cursor: pointer;
-  transition: transform 0.1s ease-in;
+  transition: transform 0.2s ease-in;
 }
 .bell-left {
   color: #42e287;

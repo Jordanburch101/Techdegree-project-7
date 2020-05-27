@@ -22,7 +22,7 @@
     &-search {
         height: 30px;
         width:  300px;
-        border: 1px solid rgba(190, 190, 190, 0.685);
+        border: 1px solid $color-border;
         padding-left: .5em;
         padding-right: .5em;
         border-radius: 10px;
@@ -40,7 +40,7 @@
         height: 100px;
         width:  300px;
         margin-bottom: 1em;
-        border: 1px solid rgba(190, 190, 190, 0.685);
+        border: 1px solid $color-border;
         padding-left: .5em;
         padding-right: .5em;
         padding-top: .7em;
@@ -59,10 +59,15 @@
         margin-top: 1em;
         width: 300px;
         height: 40px;
-        border: 1px solid rgba(190, 190, 190, 0.685);
+        border: 1px solid $color-border;
         border-radius: 10px;
         color: $color-text-white;
         background-color: $color-primary;
+        transition: background-color .1s ease-in;
+        &:hover {
+            background-color: $color-alert-green;
+            border: 1px solid $color-alert-green;
+        }
     }
 }
 

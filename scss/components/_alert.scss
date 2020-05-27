@@ -1,7 +1,7 @@
 #alert {
     display: flex;
     justify-content: center;
-    color: #fff;
+    color: $color-text-white;
     border-right: 1px solid $color-border; 
     .alert-banner {
         margin-top: 1em;
@@ -17,10 +17,10 @@
         max-height: 999px;
     
         p {
-            color: #fff;
+            color: $color-text-white;
             font-size: .9em;
             strong {
-                color: #fff;
+                color: $color-text-white;
             }
         }
     }
@@ -63,6 +63,14 @@
             border-bottom: none;
          }
      }  
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border: solid 1px $color-alert-green-dark;
+    border-radius: 80%;
+    background-color: $color-alert-green;
 }
 
 // Hidden class

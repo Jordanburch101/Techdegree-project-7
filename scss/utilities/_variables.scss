@@ -9,8 +9,8 @@ $font-secondary: 'Ubuntu', sans-serif;
 // Font Colors
 $color-text-primary: rgb(83, 83, 83);
 $color-text-light: lighten( $color-text-primary, 10% );
-$color-text-link: #9698cd;
-$color-text-focus: rgb(116, 116, 116);
+$color-text-link: #9b9b9b;
+$color-text-focus: rgb(110, 110, 110);
 $color-text-white: #fff;
 //Colors
 $color-primary: #7477bf;
@@ -20,6 +20,10 @@ $color-border: rgba(190, 190, 190, 0.685);
 
 $color-icon-unvisited: rgba(255, 255, 255, 0.5);
 $color-icon-selected: #fff;
+
+$color-alert-green: #49ff98;
+$color-alert-green-dark: #42e287;
+$color-switch-green: #81c98f;
 
 // Breakpoints
 $break-med: 768px;

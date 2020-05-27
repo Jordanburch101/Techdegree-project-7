@@ -365,8 +365,11 @@ ul {
   padding: 0;
 }
 
-*:focus {
-  outline: 0 !important;
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
 }
 
 body {
@@ -547,7 +550,7 @@ img {
 .nav .icon {
   width: 32px;
   height: 32px;
-  transition: transform 0.1s ease-in;
+  transition: transform 0.2s ease-in;
 }
 .nav .icon-svg {
   color: rgba(255, 255, 255, 0.5);
@@ -568,12 +571,16 @@ img {
   }
 }
 .nav .current {
-  display: flex;
+  border-left: solid 3px #49ff98;
+  padding-left: 1em;
 }
-.nav .border-left {
-  position: absolute;
-  border-left: 1px solid rgba(190, 190, 190, 0.685);
-  padding-right: 5px;
+.nav .current .icon-svg {
+  color: #fff;
+}
+@media (min-width: 1024px) {
+  .nav .current {
+    width: 100%;
+  }
 }
 
 .form-container {
@@ -595,7 +602,7 @@ img {
   border-radius: 5px;
 }
 .form-search:focus {
-  background-color: #747474;
+  background-color: #6e6e6e;
   color: #fff;
   outline: none;
 }
@@ -681,6 +688,14 @@ img {
   max-height: 0;
   animation: fadeout 1s;
   border-bottom: none;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border: solid 1px #42e287;
+  border-radius: 80%;
+  background-color: #49ff98;
 }
 
 .hidden {
@@ -842,7 +857,7 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: solid 1px rgba(167, 167, 167, 0.432);
+  border: solid 1px rgba(190, 190, 190, 0.685);
   border-radius: 10px;
   margin-top: 1em;
   padding: 1em 1.5em;
@@ -890,7 +905,7 @@ img {
 }
 .member-imgAndInfo .memeber-info a {
   font-size: 0.7em;
-  color: #9698cd;
+  color: #9b9b9b;
 }
 .member-imgAndInfo .recent-activity p {
   font-size: 0.7em;
@@ -929,7 +944,7 @@ img {
   margin-bottom: 1em;
 }
 .messageUser-search:focus {
-  background-color: #747474;
+  background-color: #6e6e6e;
   color: #fff;
   outline: none;
 }
@@ -946,7 +961,7 @@ img {
   resize: none;
 }
 .messageUser-text:focus {
-  background-color: #747474;
+  background-color: #6e6e6e;
   color: #fff;
   outline: none;
 }
@@ -960,6 +975,11 @@ img {
   border-radius: 10px;
   color: #fff;
   background-color: #7477bf;
+  transition: background-color 0.1s ease-in;
+}
+.messageUser-button:hover {
+  background-color: #49ff98;
+  border: 1px solid #49ff98;
 }
 
 .autocomplete {
@@ -1050,12 +1070,17 @@ img {
   border-radius: 8px;
   margin-top: 1em;
   color: #fff;
+  transition: background-color 0.2s ease-in;
+}
+.settings-button button:hover {
+  background-color: #49ff98;
+  border: 1px solid #49ff98;
 }
 .settings-button .button-save {
   background-color: #7477bf;
 }
 .settings-button .button-cancel {
-  background-color: #747474;
+  background-color: #6e6e6e;
 }
 
 /*# sourceMappingURL=style.css.map */

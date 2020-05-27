@@ -26,7 +26,9 @@ ul {
     margin: 0;
     padding: 0;
 }
-
-*:focus {
-    outline: 0 !important;
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: none;
 }

@@ -59,7 +59,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        // width: 300px;
         button {
             width: 140px;
             height: 40px;
@@ -67,6 +66,11 @@
             border-radius: 8px;
             margin-top: 1em;
             color: $color-text-white;
+            transition: background-color .2s ease-in;
+            &:hover {
+                background-color: $color-alert-green;
+                border: 1px solid $color-alert-green;
+            }
         }
         .button-save {
             background-color: $color-primary;

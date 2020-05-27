@@ -6,7 +6,7 @@ const day = document.getElementById('day');
 const week = document.getElementById('week');
 const month = document.getElementById('month');
 // Traffic Data Sets
-const trafficHourData = [1, 0, 3, 5, 10, 15, 20, 30, 35, 20, 15, 5];
+const trafficHourData = [10, 5, 8, 5, 10, 15, 20, 30, 35, 20, 15, 5];
 const trafficHourLabels = ['0-2','3-4','5-6','7-8','9-10','11-12','13-14','15-16','17-18','19-20','21-22','23-24'];
 
 const trafficDayData = [100, 30, 50, 90, 40, 60, 80];
@@ -95,7 +95,7 @@ let dailyData = {
     ],
     datasets: [{
         label: 'Daily Traffic',
-        data: [60, 100, 170, 150, 200, 120, 125],
+        data: trafficDayData,
         backgroundColor: '#7377bf',
         borderColor: 'rgba(115, 0, 168, 0.30)',
         lineTension: 0.2,
@@ -106,7 +106,14 @@ let dailyData = {
 let dailyOptions = {
     legend: {
         display: false, 
-    }
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
 };
 let dailyChart = new Chart(dailyCanvas, {
     type: 'bar',
@@ -163,7 +170,7 @@ alertBanner.innerHTML =
     <P><strong>Alert:</strong> You have <strong>4</strong> overdue tasks to complete</P>
     <p class="alert-banner-close">X</p>
     </div>
-    `
+    `;
 
 alertBanner.addEventListener('click', e => {
     const element = e.target;
@@ -185,11 +192,11 @@ unreadContainer.style.display = 'none';
 // Set display to show
 function displayShow(event) {
     setTimeout(function(){ event.style.opacity = 1 }, 100);
-}
+};
 // Set display to hide
 function displayHide(event) {
     setTimeout(function(){ event.style.display = 'none' }, 1000);
-}
+};
 // Add event listenr to bell icon
 bellIcon.addEventListener('click', (e) => {
     if(unreadContainer.style.opacity === '0') {
@@ -204,7 +211,7 @@ bellIcon.addEventListener('click', (e) => {
         <path class="bellWhite-left" fill="currentColor" d="M12 0l-1 2-4 2-1 3-1 6-4 5 1 1 1 1h9V0z"/>
         <path class="bellWhite-middle" d="M9 20v1h6v-1H9z" fill="currentColor"/>
       </svg>
-        `
+        `;
     } else {
         unreadContainer.style.opacity = 0;
         displayHide(unreadContainer); 
@@ -217,7 +224,7 @@ bellIcon.addEventListener('click', (e) => {
 // Remove HTMl after hiding message
 function removeHtml(event) {
     setTimeout(function(){ event.innerHTML = '' }, 1000);
-}
+};
 
 // Add event listener to msg contaienr
 unreadContainer.addEventListener('click', (e) => {
@@ -267,12 +274,14 @@ let savedSelected = localStorage.getItem('select');
 
 if(savedSelected) {
     select.value = savedSelected;
-}
+};
+
 // Save timezone to localstorage function
 function timezoneSelect() {
     savedSelected = select.options[select.selectedIndex].value;
     localStorage.setItem('select', savedSelected);
-}
+};
+
 ////////////// CheckBox Local Storage //////////////
 const emailCheck = document.getElementById('emailCheck');
 const profileCheck = document.getElementById('profileCheck');
@@ -294,7 +303,8 @@ function save() {
     }
     timezoneSelect()
     console.log(localStorage);
-}
+};
+
 // Clear localstorage and reset dom
 function clr(){
     location.reload();
@@ -303,7 +313,8 @@ function clr(){
     profileCheck.checked = false;
     select.value = '';
     console.log(localStorage);
-}
+};
+
 // Return boolem values from localstorage
 const emailChecked = JSON.parse(localStorage.getItem('emailCheck'));
 const profileChecked = JSON.parse(localStorage.getItem('profileCheck'));
@@ -313,7 +324,8 @@ function checkedBoth() {
     } else {
         return false;
     }
-}
+};
+
 // Check localstorage on load
 function load() {
     const Allchecked = JSON.parse(localStorage.getItem('profileCheck', 'emailCheck'));
@@ -326,5 +338,6 @@ function load() {
         document.getElementById('profileCheck').checked = profileChecked;
     }
     
-}
-load()
+};
+
+load();

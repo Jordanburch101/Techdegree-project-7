@@ -14,7 +14,7 @@
     .icon{
         width: 32px;
         height: 32px;
-        transition: transform .1s ease-in;
+        transition: transform .2s ease-in;
         &-svg {
             color: $color-icon-unvisited;
         }
@@ -33,12 +33,16 @@
         }
     }
     .current {
-        display: flex;
-       
-    }
-    .border-left {
-        position: absolute;
-        border-left: 1px solid $color-border;
-        padding-right: 5px;
+        border-left: solid 3px $color-alert-green;
+        padding-left: 1em;
+        
+        .icon {
+            &-svg {
+                color: $color-text-white;
+            }
+        }
+        @include media('lrg') {
+            width: 100%;
+        }
     }
 }

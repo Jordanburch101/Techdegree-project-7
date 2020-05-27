@@ -15,7 +15,6 @@
         background-color: $color-primary;
         border-radius: 10px;
         max-height: 999px;
-    
         p {
             color: $color-text-white;
             font-size: .9em;
@@ -55,6 +54,7 @@
         &-close {
             font-weight: bold;
             font-size: 1em;
+            cursor: pointer;
         }
         &-hidden {
             opacity: 0;

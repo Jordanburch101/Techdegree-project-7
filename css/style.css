@@ -498,6 +498,7 @@ img {
 }
 
 .bell {
+  cursor: pointer;
   transition: transform 0.1s ease-in;
 }
 .bell-left {
@@ -517,6 +518,7 @@ img {
 }
 
 .bellWhite {
+  cursor: pointer;
   transition: transform 0.1s ease-in;
 }
 .bellWhite-left {
@@ -682,6 +684,7 @@ img {
 .unread-message-close, .unread-message-hidden-close {
   font-weight: bold;
   font-size: 1em;
+  cursor: pointer;
 }
 .unread-message-hidden, .unread-message-hidden-hidden {
   opacity: 0;

@@ -45,7 +45,8 @@
 }
 
 .bell {
-    transition: transform .1s ease-in;  
+    cursor: pointer; 
+    transition: transform .1s ease-in; 
     &-left {
         color: rgb(66, 226, 135);
         &-bottom {
@@ -64,6 +65,7 @@
 }
 
 .bellWhite {
+    cursor: pointer; 
     transition: transform .1s ease-in;  
     &-left {
         color: #f3f3f3;

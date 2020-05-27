@@ -15,6 +15,9 @@
         background-color: $color-primary;
         border-radius: 10px;
         max-height: 999px;
+        &-close {
+            cursor: pointer; 
+        }
         p {
             color: $color-text-white;
             font-size: .9em;

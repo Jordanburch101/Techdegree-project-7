@@ -649,6 +649,9 @@ img {
   border-radius: 10px;
   max-height: 999px;
 }
+#alert .alert-banner-close {
+  cursor: pointer;
+}
 #alert .alert-banner p {
   color: #fff;
   font-size: 0.9em;

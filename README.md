@@ -1,5 +1,5 @@
 # Teachdegree-project 7
-> An interactive Web Dashboard complete with JavaScript-driven charts and graphs. It features use of local storage, pop up notifcations and auto complete search features.
+> An interactive Web Dashboard complete with JavaScript-driven charts and graphs. It features the use of local storage, pop up notifications, and auto-complete search features.
 
 ## Table of contents
 * [General info](#general-info)
